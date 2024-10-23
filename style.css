@@ -1,0 +1,147 @@
+/*  *{} se refere ao documento HTML como um todo */
+
+/*font-family define um estilo de fonte, sans-serif tira a serifa do texto */
+/*width: 100% preenche 100% da largura da tela*/
+/*margin: 0 auto vai dar uma margem automática para todos os lados*/
+/*box-sizing: border-box */
+*{
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/*Estilizando a tag body do html*/
+/*background-color = cor de fundo, valor em hexadecimal*/
+/*Largura preenche 100% da tela*/
+/*height: 100vh a altura vai preencher 100 viewheight da tela*/
+
+/*O display: flex funciona de uma maneira diferente dos outros displays. Quando colocamos essa propriedade em um elemento, esse elemento se torna um flex container, a partir daí podemos manipular todos os elementos filhos desse flex container com propriedades novas.*/
+
+/*justificar-content é uma propriedade CSS usada para alinhar e distribuir os itens flex (ou content) ao longo do eixo principal de um contêiner flexível*/
+
+/*align-items A propriedade CSS align-items define o valor de align-self em todos os filhos diretos como um grupo. No flexbox, controla o alinhamento dos itens no eixo cruzado.*/
+body{
+    background-color: #18181B;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*alinha os items flex-box um abaixo do outro*/
+}
+
+/*Estilizando a imagem através da class = .logo*/
+/*max-width = largura máxima*/
+
+.logo{
+    max-width: 600px;
+    margin-bottom: 24px; /*A propriedade CSS margin-bottom define a margin area na parte inferior de um elemento. Um valor positivo coloca o valor mais longe de outros*/
+
+}
+
+/*Estilizando a tag main por meio da class = .container-input*/
+/*margin(margem): 14px no eixo y, 0 no eixo x */
+.container-input{
+    max-width: 480px;
+    margin: 14px 0;
+
+}
+
+/*Estilizando as tags span por meio da class .container-input*/
+.container-input span{
+    color: #fff; /*cor do texto*/
+    font-size: 22px; /*tamanho da fonte*/
+}
+
+/**Estilizando o botão slider por meio da class .slider*/
+.slider{
+    -webkit-appearance: none; /*remove a aparência preenchida do botão slider*/
+    width: 100%; /*largura: 100%*/
+    border-radius: 5px; /*raio de borda: 5 pixels*/
+    background: #DFDFDF; /*cor do botão*/
+    height: 18px; /*altura: 18 pixels*/
+    outline: none; /**Outline é um contorno é uma linha desenhada ao redor dos elementos, FORA das bordas, para fazer o elemento "se destacar".*/
+    margin-top: 18px; /*Margem de cima*/
+}
+
+/*Estilizando o botão call to action(cta) Gerar senha*/
+.button-cta{
+    height: 40px; /*altura: 40 pixel*/
+    background-color: #3eb72b; /*cor de fundo no botão*/
+    border: 0; /*borda: valor zerado*/
+    border-radius: 4px; /*raio de borda*/
+    cursor: pointer; /*vai exibir um cursor de mãozinha quando arrastar o mouse em cima do botão*/
+    margin-top: 40px; /*margem com o elemento de cima: 40 pixels*/
+    color: #fff; /*cor do texto do botão*/
+    font-weight: bold; /*define a fonte do texto do botão como negrito*/
+    font-size: 18px; /*tamanho da fonte: 20 pixels*/
+}
+
+/*Estilizando a div container-password*/
+.container-password{
+    max-width: 480px; /*largura máxima: 480 pixels*/
+    margin: 14px 0; /*margem de 14px de cima e baixo, 0 na esquerda e direita*/
+    display: flex; /*vai criar um flex box com todos os elementos*/
+    align-items: center; /*alinha os elementos no centro*/
+    flex-direction: column; /*alinha os elementos flex-box um em baixo do outro*/
+    cursor: pointer; /*deixa o curso com aparência de mãozinha ao arrastar o mouse sobre o campo da div*/
+}
+
+/*Estilizando o span Sua senha gerada foi:*/
+.title{
+    text-align: center; /*alinha o texto no centro*/
+    color: #fff; /*cor do texto*/
+    font-size: 2px; /*tamanho da fonte*/
+    margin-top: 24px; /*margem com o elemento de cima de 24 pixels*/
+    margin-bottom: 8px; /*margem com o elemento de baixo de 8 pixels*/
+}
+
+/*Estilizando o valor da senha gerada*/
+.password{
+    height: 40px; /*altura: 40 pixels*/
+    background-color: rgba(0,0,0, 0.40); /*cor de fundo rgba(vermelho, verde, azul e alpha)*/
+    border-radius: 4px; /*raido de borda: 4 pixels*/
+    display: flex; /*transforma todo o conteúdo em flex-box*/
+    justify-content: center; /*alinha os items flex no centro*/
+    align-items: center; /*vai alinhar o texto tanto horizontal quanto verticalmente no centro*/
+    color: #fff; /*cor do texto*/
+    border: 1px solid #313131; /*adiciona uma borda em volta do elemento de cor em hexidecimal*/
+    transition: transform 0.5s; /*a transição do tipo transform vai dura 0.5 segundos*/
+}
+
+/*Quando passar o mouse em cima do campo contendo o password gerado*/
+.password:hover{
+    transform: scale(1.05); /*vai aumentar o tamanho do password em scale(1.05)*/
+
+}
+
+/*Estilizando o span clique na senha para copiar por meio da class tooltip*/
+.tooltip{
+    color: #fff; /*cor do texto*/
+    position: relative; /* position relative serve para posicionar o elemento da página de acordo com as indicações que você definir, estabelecendo que ele aceita as propriedades top, bottom, left e right*/
+    top: 20px; /*20 pixels no topo*/
+    padding: 6px 8px ; /*é a distância entre um elemento e sua bordas, 6px cima e baixo, 8px na esquerda e direita*/
+    background: rgb(15,15,15); /*cor de fundo rgb*/
+    text-align: center; /*Alinha o texto no centro*/
+    font-size: 16px; /*Tamanho da fonte*/
+    border-radius: 6px; /*raio de borda: 6 pixels*/
+    visibility: hidden; /*vai esconder a visiblidade do tooltip*/
+    opacity: 0; /*opacidade: 0*/
+    transition: all 0.5s ease-in-out; /*vai aplicar um transition em todas as propriedades de 0.5 segundos,
+    ease-in-out - especifica um efeito de transição com início e fim lentos*/
+
+
+}
+
+/*vai esconder o container-password, para ser reexibido ao gera uma senha*/
+.hide{
+    display: none;
+}
+
+/*Ao arrastar o mouse em cima do container-password*/
+.container-password:hover .tooltip{ /* não esquecer o espaço entre o :hover e o tooltip*/
+    visibility: visible; /*vai tornar a visualização do tooltip visível*/
+    bottom: 50px; /*margin de baixo: 50px*/
+    opacity: 1; /*opacidade: 1*/
+}
